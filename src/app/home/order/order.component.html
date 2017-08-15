@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col">
+        <form [formGroup]="orderForm" (ngSubmit)="onOrderSubmit()">
+            <div class="form-group">
+                <div class="form-check our-plans">
+                    <div class="card" *ngFor="let plan of plans">
+
+                            <!--Card image-->
+                            <div class="view hm-white-slight waves-light" ripple-radius>
+                                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+                                <a>
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->
+                                <h4 class="card-title">{{ plan.amount }} Meows</h4>
+                                <!--Text-->
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a class="btn btn-primary waves-light" ripple-radius>
+                                    <input
+                                        name="orderAmount"
+                                        type="radio"
+                                        (click)="onPlanSelected($event)"
+                                        formControlName="orderAmount"
+                                        [value]="plan.amount">
+                                    {{ plan.price}}
+                                </a>
+
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+
+            <div class="hidden-form-groups">
+                <div class="md-form form-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        mdbActive
+                        formControlName="orderPhone"
+                        (blur)="checkPhone($event)"
+                        [textMask]="{mask: mask}"
+                    />
+                    <label class="active">Phone Number</label>
+                </div>
+
+
+                <div class="form-group label-floating is-empty">
+                    <label class="control-label">How Often?</label>
+                    <select class="form-control" id="orderFrequency" formControlName="orderFrequency">
+                        <option *ngFor="let time of times" [value]="time">
+                            {{ time }}
+                    </option>
+                      </select>
+                </div>
+
+                <div class=" md-form form-group">
+                    <textarea mdbActive class="md-textarea" id="orderSecret" rows="3" formControlName="orderSecret" length="120" charCounter></textarea>
+                    <label for="orderSecret">Secret Message</label>
+
+                </div>
+
+                <br>
+                <button class="btn btn-primary" type="submit" [disabled]="!orderForm.valid">Add To Cart</button>
+            </div>
+
+        </form>
+    </div>
+</div>

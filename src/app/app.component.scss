@@ -1,0 +1,49 @@
+
+.top-nav-collapse {
+    background-color: #f8bbd0 !important;
+}
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #f8bbd0 !important;
+    }
+}
+@media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 700px;
+    }
+}
+
+
+
+
+footer .row {
+    color: #333;
+    padding-bottom: 4.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid #ededed;
+
+    .footer-links {
+        text-align: center;
+
+        a {
+            color: #333;
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
+        }
+    }
+
+    .footer-social-icons {
+        text-align:right;
+
+        a {
+            font-size: 1.5rem;
+            margin-left: 0.9rem
+        }
+    }
+}
