@@ -3132,6 +3132,10 @@ ng2-simple-components@^0.4.54:
   version "0.4.54"
   resolved "https://registry.yarnpkg.com/ng2-simple-components/-/ng2-simple-components-0.4.54.tgz#8be5393a20829da93e02c9f1dc2ce35ba65562f5"
 
+ngx-stripe@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/ngx-stripe/-/ngx-stripe-0.0.3.tgz#7089bc169f54f674117ce0bd33251c80f467a43b"
+
 no-case@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"

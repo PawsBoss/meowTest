@@ -1,34 +1,59 @@
 <section class="hero">
 	<div class="container">
-		<div class="row">
-			<div class="col-8">
-				Hero section
+		<div class="row justify-content-around">
+			<div class="col-11">
+				<h2>Send Cat Facts To Your Friends</h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur.</h3>
+				<button md-raised-button>Get Started</button>
 			</div>
 		</div>
 	</div>
 </section>
 
 
-<section class="about">
+<section class="features">
 	<div class="container">
-		<div class="row features">
-			<div class="col-4">
-				Feature 1
-			</div>
-			<div class="col-4">
-				Feature 3
-			</div>
-			<div class="col-4">
-				Feature 3
+
+		<div class="row section-title">
+			<div class="col">
+				<h2>Features</h2>
+				<h3>Your going to love them</h3>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-6">
-				Image here
+
+
+		<div class="row timeline">
+			<div class="feature col-12 offset">
+				<div class="img-wrap">
+					<img src="../assets/img/meow1.png" alt="">
+				</div>
+				<div class="content-wrap">
+					<h4>Simple & Easy</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+				</div>
 			</div>
-			<div class="col-6">
-				About us here.
+
+			<div class="non-offset feature col-12">
+				<div class="img-wrap">
+					<img src="../assets/img/meow1.png" alt="">
+
+				</div>
+				<div class="content-wrap">
+					<h4>Simple & Easy</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+				</div>
 			</div>
+
+			<div class="feature col-12 offset">
+				<div class="img-wrap">
+					<img src="../assets/img/meow1.png" alt="">
+				</div>
+				<div class="content-wrap">
+					<h4>Simple & Easy</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </section>
@@ -46,21 +71,43 @@
 		</div>
 
 
-		<div class="row">
-			<div class="col-4">
-				A review Will go here
+		<div class="row justify-content-around">
+			<div class="col-11 col-md-8 col-lg-4 review">
+				<div class="testimonial">
+				 <div class="testimonial-content">
+					 <div class="testimonial-icon">
+						 <i class="fa fa-quote-left"></i>
+					 </div>
+					 <p class="description">Cat Facts changed my life- I quit my job and started learning to speak cat.</p>
+				 </div>
+				 <h3 class="title">Cat Guy</h3>
+			 </div>
 			</div>
-			<div class="col-4">
-					A review Will go here
+			<div class="col-11 col-md-8 col-lg-4 review">
+				<div class="testimonial">
+				 <div class="testimonial-content">
+					 <div class="testimonial-icon">
+						 <i class="fa fa-quote-left"></i>
+					 </div>
+					 <p class="description">I asked my prom date out with Cat Facts. It's anonymous so she didn't know it was me.</p>
+				 </div>
+				 <h3 class="title">Kitty Lover</h3>
+			 </div>
 			</div>
-			<div class="col-4">
-					A review Will go here
+			<div class="col-11 col-md-8 col-lg-4 review">
+				<div class="testimonial">
+				 <div class="testimonial-content">
+					 <div class="testimonial-icon">
+						 <i class="fa fa-quote-left"></i>
+					 </div>
+					 <p class="description">I met my husband after he signed me up for Cat Facts. Thank you Cat Facts!</p>
+				 </div>
+				 <h3 class="title">Crazy Cat Lady</h3>
+			 </div>
 			</div>
 		</div>
 	</div>
 </section>
-
-
 
 
 <section class="pricing">
@@ -74,17 +121,6 @@
 
 		<app-order></app-order>
 
-		<!-- <div class="row">
-			<div class="col"> -->
-				<!-- Display all the orders -->
-				<!-- <app-order-element
-					*ngFor="let item of cartItems; let i = index"
-					[element]="item"
-					[id]="i">
-				</app-order-element>
-
-			</div>
-		</div> -->
 	</div>
 </section>
 
@@ -98,31 +134,26 @@
 				<h3>Frequently asked questions</h3>
 			</div>
 		</div>
-		<div class="row justify-content-center">
-			<div class="col-5">
-				<div class="question">
-					<h4>When will the messages be sent?</h4>
-					<p>We will typically begin sending the message within 15 minutes of confirmed order.</p>
-				</div>
-				<div class="question">
-					<h4>What carries do you support?</h4>
-					<p>We currently support all US cell phone providers.</p>
-				</div>
-				<div class="question">
-					<h4>What is a final message?</h4>
-					<p>At the end of the subscription the user will receive a final message you can customize.</p>
-				</div>
+		<div class="row justify-content-around">
+			<div class="col-12 col-md-5 question">
+				<h4>When will the messages be sent?</h4>
+				<p>We will typically begin sending the message within 15 minutes of confirmed order.</p>
 			</div>
-			<div class="col-5">
-				<div class="question">
-					<h4>Can I try this before commiting?</h4>
-					<p>Absoluty! Just click <a href="#" class="tryout">here</a> and enter your cellphone number to try it out.</p>
-				</div>
-				<div class="question">
-					<h4>Can I opt out of the list?</h4>
-					<p>This is a feature that we are working on please email us for further questions.</p>
-				</div>
+			<div class="col-12 col-md-5 question">
+				<h4>What carries do you support?</h4>
+				<p>We currently support all US cell phone providers.</p>
+			</div>
+			<div class="col-12 col-md-5 question">
+				<h4>What is a final message?</h4>
+				<p>At the end of the subscription the user will receive a final message you can customize.</p>
+			</div>
+			<div class="col-12 col-md-5 question">
+				<h4>Can I try out before committing?</h4>
+				<p>Absoluty! Just click <a href="#" class="tryout">here</a> and enter your cellphone number to try it out.</p>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- CART COMPONENT -->
+<app-cart></app-cart>

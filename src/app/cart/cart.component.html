@@ -1,0 +1,79 @@
+<div class="cart-container" [ngClass]="{'empty': isCartEmpty, 'cart-open': isCartOpen}">
+	<a href="#0" class="cart-trigger" (click)="onCartClick()">
+		Cart
+		<ul class="count"> <li>{{ numOfCartItems }}</li></ul>
+
+	</a>
+
+	<div class="cart">
+		<div class="wrapper">
+			<header>
+				<a href="#item-1">BACK</a><h2>Cart</h2>
+			</header>
+
+			<div class="body gallery">
+
+				<div id="item-1" class="control-operator"></div>
+				<div id="item-2" class="control-operator"></div>
+
+
+				<figure class="item review">
+					<ul>
+						<li class="product">
+
+							<div class="product-image">
+								<img src="../assets/img/meow1.png" alt="">
+							</div>
+
+							<div class="product-details">
+
+								<div class="plan-details">
+									<h3>12 Meow Facts</h3>
+									<span class="price">$2.99</span>
+								</div>
+
+								<div class="plan-settings">
+									<span>(555)343-4132</span>
+								</div>
+
+								<div class="actions">
+									<md-icon>mode_edit</md-icon>
+									<md-icon>delete</md-icon>
+								</div>
+
+							</div>
+
+						</li>
+					</ul>
+				</figure>
+
+
+				<figure class="item payment">
+					<form [formGroup]="paymentForm" (ngSubmit)="onPayment()">
+						<h5>Please enter your payment information</h5>
+
+						<div class="form-group">
+							<md-input-container>
+								 <input mdInput formControlName="orderEmail"  placeholder="Email">
+							</md-input-container>
+						</div>
+
+						<div class="form-group">
+							<div id="card-element" class="field" #card></div>
+						</div>
+
+						<button class="btn btn-primary" type="submit" [disabled]="!paymentForm.valid">Pay</button>
+
+					</form>
+				</figure>
+
+
+
+			</div>
+
+			<footer>
+				<a href="#item-2" class="checkout"><em>Checkout - $<span>0</span></em></a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart -->
+</div> <!-- cd-cart-container -->

@@ -5,10 +5,31 @@
 
 .our-plans {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     .card {
-        width: 30%;
+        width: 90%;
+        margin-bottom: 3rem;
+        max-width: 300px;
+
+        img {
+            width: 210px;
+            margin: 0 auto;
+        }
+
+        .card-body {
+            text-align: center;
+
+            h4 {
+                color: #212121;
+            }
+        }
+
+        @media (min-width: 960px) {
+            width: 30%;
+            margin-bottom: 3rem;
+         }
 
         a.btn {
             position: relative;
@@ -26,4 +47,39 @@
         }
     }
 
+}
+
+
+form {
+    padding: 0.9rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .mat-select,
+    .mat-input-container {
+        width: 90%;
+    }
+}
+
+
+
+
+.hidden-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    span.icon {
+        align-self: flex-end;
+        margin: 1rem;
+    }
+
+}
+
+
+
+
+mat-input-ripple {
+    background-color: #FFEB3B;
 }

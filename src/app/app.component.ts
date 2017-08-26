@@ -8,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+    navIsActive:boolean = false;
 
     constructor() {
 
     }
     ngOnInit() {
+    }
+
+    onNavTrigger() {
+        this.navIsActive = !this.navIsActive;
     }
 
 

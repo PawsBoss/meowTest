@@ -1,73 +1,63 @@
 <div class="row">
     <div class="col">
-        <form [formGroup]="orderForm" (ngSubmit)="onOrderSubmit()">
-            <div class="form-group">
-                <div class="form-check our-plans">
-                    <div class="card" *ngFor="let plan of plans">
+        <div class="our-plans">
 
-                            <!--Card image-->
-                            <div class="view hm-white-slight waves-light" ripple-radius>
-                                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                                <a>
-                                    <div class="mask"></div>
-                                </a>
+            <div class="card" *ngFor="let plan of meowPlans">
+
+                <!--Card image-->
+                <div class="view hm-white-slight waves-light" ripple-radius>
+                    <img src="{{plan.img}}" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+                    <a><div class="mask"></div></a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+                    <h4 class="card-title">{{ plan.amount }} Meows</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    <div class="morph-button morph-button-modal morph-button-fixed">
+                        <button type="button" (click)="onPlanSelect(plan)" appMorphBtn>Sign Up</button>
+
+                        <div class="morph-content">
+                            <div>
+                                <div class="hidden-content">
+                                    <span class="icon icon-close" #triggerButton><i class="fa fa-times-circle-o"></i></span>
+                                    <form [formGroup]="orderForm" (ngSubmit)="onAddToCart(triggerButton)">
+
+                                        <h5>Plan Details</h5>
+
+                                        <div class="form-group">
+                                            <md-input-container color="orange">
+                                                 <input mdInput formControlName="orderPhone" [textMask]="{mask: mask}" placeholder="Cell Phone" value="Sushi">
+                                            </md-input-container>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <md-select placeholder="How Often?" formControlName="orderFrequency" >
+                                                <md-option *ngFor="let time of times" [value]="time">{{ time }}</md-option>
+                                            </md-select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <md-input-container class="example-full-width">
+                                                <input formControlName="orderSecret" mdInput #message maxlength="120" placeholder="Message">
+                                                <md-hint align="start"><strong>Don't disclose personal info</strong> </md-hint>
+                                                <md-hint align="end">{{message.value.length}} / 256</md-hint>
+                                            </md-input-container>
+                                        </div>
+                                        <hr>
+                                        <button class="btn btn-primary" type="submit" [disabled]="!orderForm.valid">Add To Cart</button>
+
+                                    </form>
+                                </div>
                             </div>
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Title-->
-                                <h4 class="card-title">{{ plan.amount }} Meows</h4>
-                                <!--Text-->
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a class="btn btn-primary waves-light" ripple-radius>
-                                    <input
-                                        name="orderAmount"
-                                        type="radio"
-                                        (click)="onPlanSelected($event)"
-                                        formControlName="orderAmount"
-                                        [value]="plan.amount">
-                                    {{ plan.price}}
-                                </a>
-
-                            </div>
-
                         </div>
+                    </div><!-- morph-button -->
+
+
+
                 </div>
             </div>
-
-            <div class="hidden-form-groups">
-                <div class="md-form form-group">
-                    <input
-                        type="text"
-                        class="form-control"
-                        mdbActive
-                        formControlName="orderPhone"
-                        (blur)="checkPhone($event)"
-                        [textMask]="{mask: mask}"
-                    />
-                    <label class="active">Phone Number</label>
-                </div>
-
-
-                <div class="form-group label-floating is-empty">
-                    <label class="control-label">How Often?</label>
-                    <select class="form-control" id="orderFrequency" formControlName="orderFrequency">
-                        <option *ngFor="let time of times" [value]="time">
-                            {{ time }}
-                    </option>
-                      </select>
-                </div>
-
-                <div class=" md-form form-group">
-                    <textarea mdbActive class="md-textarea" id="orderSecret" rows="3" formControlName="orderSecret" length="120" charCounter></textarea>
-                    <label for="orderSecret">Secret Message</label>
-
-                </div>
-
-                <br>
-                <button class="btn btn-primary" type="submit" [disabled]="!orderForm.valid">Add To Cart</button>
-            </div>
-
-        </form>
+        </div>
     </div>
 </div>

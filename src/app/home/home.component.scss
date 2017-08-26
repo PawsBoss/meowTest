@@ -1,31 +1,299 @@
-.section-title {
-    margin-bottom: 6rem;
-    margin-top: 6rem;
-
-    h2 {
-        font-weight: 900;
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-    }
-
-    h3 {
-        font-weight: 300;
-    }
-}
-
-.question {
-    text-align: left;
-
-    p {
-        margin: 0 2.4rem 2.7rem 0;
-    }
-}
 
 section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
-section.pricing {
-    background-color: #EEEEEE;
+
+.section-title {
+    margin-bottom: 3.6rem;
+    text-align: center;
+}
+
+
+
+
+/*****************************************************************************
+----------------------- HERO SECTION --------------------------------------
+*****************************************************************************/
+.hero {
+    background: linear-gradient( #29B6F6 90%, #ECEFF1 10%);
+    background: -o-linear-gradient( #29B6F6 90%, #ECEFF1 10%);
+    background: -moz-linear-gradient( #29B6F6 90%, #ECEFF1 10%);
+    background: -webkit-linear-gradient( #29B6F6 90%, #ECEFF1 10%);
+    background: -ms-linear-gradient( #29B6F6 90%, #ECEFF1 10%);
+    text-align: center;
+
+
+    button {
+        background-color: #0288D1;
+        text-transform: uppercase;
+    }
+
+}
+
+
+
+
+
+
+/*****************************************************************************
+----------------------- FEATURES SECTION --------------------------------------
+*****************************************************************************/
+
+.features {
+    padding-bottom: 0;
+    background-color: #ECEFF1;
+    border-bottom: 1px solid #ECEFF1;
+
+    .section-title {
+        h2 {color: #212121;}
+        h3 {color: #757575;}
+    }
+
+    .feature {
+        margin-bottom: 2.4rem;
+
+        h4 {color: #212121;}
+        p {
+            color: #757575;
+        }
+    }
+}
+
+
+
+
+.timeline {
+    position: relative;
+    padding: 2em 0 6rem;
+    margin-top: 2em;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+         /* this is the vertical line */
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 42px;
+          height: 100%;
+          width: 4px;
+          background: #eceff1;
+    }
+
+    .feature {
+        position: relative;
+
+        .img-wrap {
+            position: absolute;
+            top: 0;
+            left: 12px;
+            img {
+                width: 66px;
+            }
+        }
+
+        .content-wrap {
+            position: relative;
+            margin-left: 81px;
+            margin-right: 15px;
+            background: #eceff1;
+            border-radius: 0.25em;
+            padding: 1em;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 16px;
+                right: 100%;
+                height: 0;
+                width: 0;
+                border: 15px solid transparent;
+                border-right: 15px solid #eceff1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .timeline {
+
+        &::before {
+              left: 50%;
+        }
+
+        .non-offset {
+            width: 50%;
+            align-self: flex-end;
+
+            .img-wrap {
+                left: -30px
+            }
+
+            .content-wrap {
+                margin-left: 36px;
+                margin-right: 0;
+            }
+        }
+
+
+        .offset {
+            width: 50%;
+            .img-wrap {
+                left: auto;
+                right: -33px;
+            }
+
+            .content-wrap {
+                margin-left: 0;
+                margin-right: 36px;
+
+                &::before {
+                    right: -30px;
+                    border-right: 15px solid transparent;
+                    border-left: 15px solid #eceff1;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+
+
+/*****************************************************************************
+----------------------- REVIEWS SECTION --------------------------------------
+*****************************************************************************/
+
+
+
+.reviews {
+    background-color: #03A9F4;
+    padding-bottom: 0;
+
+    .review {
+        margin-bottom: 4.2rem;
+    }
+}
+
+
+.testimonial .testimonial-content{
+    padding: 35px 25px 35px 50px;
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #ECEFF1;
+    position: relative;
+}
+.testimonial .testimonial-content:after{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 22px;
+    transform: rotate(45deg);
+}
+.testimonial-content .testimonial-icon{
+    width: 50px;
+    height: 45px;
+    background: #FFEB3B;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    line-height: 42px;
+    position: absolute;
+    top: 37px;
+    left: -19px;
+}
+.testimonial-content .testimonial-icon:before{
+    content: "";
+    border-bottom: 16px solid #FFEB3B;
+    border-left: 18px solid transparent;
+    position: absolute;
+    top: -16px;
+    left: 1px;
+}
+.testimonial .description{
+    font-size: 1rem;
+    font-style: italic;
+    color: #757575;
+    line-height: 23px;
+    margin: 0;
+}
+.testimonial .title{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 9px;
+    text-align: left;
+}
+.testimonial .post{
+    display: block;
+    font-size: 14px;
+    color: #FFEB3B;
+}
+
+
+/*****************************************************************************
+----------------------- PRICING SECTION --------------------------------------
+*****************************************************************************/
+
+.pricing {
+    background: linear-gradient( #03A9F4 50%, #ECEFF1 50%);
+    background: -o-linear-gradient( #03A9F4 50%, #ECEFF1 50%);
+    background: -moz-linear-gradient( #03A9F4 50%, #ECEFF1 50%);
+    background: -webkit-linear-gradient( #03A9F4 50%, #ECEFF1 50%);
+    background: -ms-linear-gradient( #03A9F4 50%, #ECEFF1 50%);
+
+    .section-title {
+        color: #fff;
+        h3 {
+            color: #fff;
+        }
+    }
+
+}
+
+
+
+
+/*****************************************************************************
+----------------------- FAQ SECTION ------------------------------------------
+*****************************************************************************/
+
+.faq {
+    padding-bottom: 0;
+    border-top: 1px solid #ECEFF1;
+    padding-bottom: 9rem;
+    background-color: #ECEFF1;
+    .section-title {
+        h2{
+            color: #212121;
+        }
+        h3 {
+            color: #757575;
+        }
+
+    }
+    .question {
+        text-align: left;
+        margin-bottom: 1.5rem;
+
+        h4 {
+            color: #212121;
+        }
+
+        p {
+            color: #757575;
+        }
+    }
 }
